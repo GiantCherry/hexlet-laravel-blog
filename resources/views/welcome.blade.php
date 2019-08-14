@@ -1,14 +1,11 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
-</head>
-<body>
-<!-- BEGIN (write your solution here) -->
-<a href="/about">about</a>
-<a href="/articles">articles</a>
-<!-- END -->
-</body>
-</html>
+@extends('layouts.app')
+
+<!-- Секция, содержимое которой обычный текст. -->
+@section('title', 'Главная страница блога')
+
+<!-- Секция, содержащая HTML блок. Имеет открывающую и закрывающую часть. -->
+@section('content')
+    <a href="/about">about</a>
+    <a href="/articles">articles</a>
+@endsection
+
