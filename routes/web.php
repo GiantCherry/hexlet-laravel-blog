@@ -13,4 +13,10 @@
 
 Route::get('/', function () {
     return view('welcome');
+    //return 'hello world!';
+});
+
+Route::get('/about', function () {
+    return view('about');
+    //return 'hello world!';
 });
