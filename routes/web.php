@@ -13,10 +13,20 @@
 
 Route::get('/', function () {
     return view('welcome');
-    //return 'hello world!';
 });
 
 Route::get('/about', function () {
+
+//    $message = 'Be called ROUTE /about';
+//    Log::alert($message);
+
     return view('about');
-    //return 'hello world!';
+});
+
+Route::get('/articles', function () {
+
+//    $message = 'Be called ROUTE /articles';
+//    Log::alert($message);
+
+    return view('articles');
 });
