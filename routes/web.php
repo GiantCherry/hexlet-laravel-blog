@@ -11,22 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@main');
 
-Route::get('/about', function () {
+Route::get('/about', 'PageController@about');
 
-//    $message = 'Be called ROUTE /about';
-//    Log::alert($message);
-
-    return view('about');
-});
-
-Route::get('/articles', function () {
-
-//    $message = 'Be called ROUTE /articles';
-//    Log::alert($message);
-
-    return view('articles');
-});
+Route::get('/articles', 'ArticleController@article');
