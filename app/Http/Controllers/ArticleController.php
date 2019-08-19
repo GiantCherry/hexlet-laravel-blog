@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Article;
 
 class ArticleController extends Controller
 {
-    public function article()
+    public function index()
     {
-        return view('article.articles');
+        $articles = Article::paginate();
+
+        $url = action('ArticleController@index');
+
+        // Статьи передаются в шаблон
+        // compact('articles') => [ 'articles' => $articles ]
+        return view('article.index', compact('articles'));
     }
 }
