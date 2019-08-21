@@ -1,17 +1,6 @@
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+<?php
 
-{{ Form::model($article, ['url' => route('article.store')]) }}
-{{ Form::label('name', 'Название') }}
-{{ Form::text('name') }}<br>
-{{ Form::label('body', 'Содержание') }}
-{{ Form::textarea('body') }}<br>
+{{ Form::model($article, ['url' => route('articles.store')]) }}
+@include('article.form')
 {{ Form::submit('Сохранить') }}
 {{ Form::close() }}

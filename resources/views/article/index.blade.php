@@ -15,6 +15,7 @@
                 <tr>
                     <td>{{$article->id}}</td>
                     <td><a href="/articles/{{$article->id}}">{{$article->name}}</a></td>
+                    <td><a href="/articles/{{$article->id}}/edit/">edit</a></td>
                 </tr>
             @endforeach
             </tbody>

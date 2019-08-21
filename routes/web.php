@@ -20,7 +20,13 @@ Route::post('/articles', 'ArticleController@store');
 Route::get('/articles', 'ArticleController@index');
 
 Route::get('/articles/create', 'ArticleController@create')
-    ->name('article.create');
+    ->name('articles.create');
+
+Route::patch('/articles/{id}', 'ArticleController@update')
+    ->name('articles.update');
 
 Route::get('/articles/{id}', 'ArticleController@show')
-    ->name('article.show');
+    ->name('articles.show');
+
+Route::get('/articles/{id}/edit', 'ArticleController@edit')
+    ->name('articles.edit');
