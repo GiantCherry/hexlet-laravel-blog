@@ -39,7 +39,7 @@ class ArticleController extends Controller
             'body' => 'required|min:1000',
         ]);
 
-        $article = new App\Article();
+        $article = new \App\Article();
         // Заполнение статьи данными из формы
         $article->fill($request->all());
         // При ошибках сохранения возникнет исключение
@@ -47,7 +47,7 @@ class ArticleController extends Controller
 
         // Редирект на указанный маршрут с добавлением флеш сообщения
         return redirect()
-            ->route('article.index');
+            ->route('articles.index');
       }
 
     public function edit($id)
@@ -67,6 +67,14 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->save();
         return redirect()
-            ->route('article.index');
+            ->route('articles.index');
+    }
+
+    public function destroy($id)
+    {
+        $article = Article::findOrFail($id);
+        $article->delete();
+        return redirect()
+            ->route('articles.index');
     }
 }
